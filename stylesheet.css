@@ -11,6 +11,9 @@ body {
     overflow-x: hidden;
 }
 
+a {
+    text-decoration: none;
+}
 
 /* Nav Bar */
 
@@ -21,30 +24,39 @@ body {
 .navbar {
     background-color: #389AAF;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     height: 5rem;  
 }
 
 .navbar .logo {
     display: block;
-    max-width: 15%;
+    width: 18rem;
     height: auto; 
-    margin-right: 20%;
-    margin-left: 10%;
+    padding-right: 20%;
+    padding-left: 10%;
 }
+
 
 .icons-right {
     display: flex;
+    flex-shrink: 0;
     gap: 1rem;
     margin-right: 0.5rem;
 }
 
-.icons-right img {
+/*.icons-right img {
     max-width: 60%;
     height: auto;
 }
+*/
 
+#profile img, 
+#favorites img,
+#search img,
+#cart img {
+    max-width: 70%;
+}
 
 .navbar a {
     text-decoration: none;   
@@ -125,10 +137,46 @@ header img {
     color: white;
 }
 
-.bg-plantotm img {
-    max-width: 100%;
+
+
+/* Plant of the Month*/
+
+.plantotm-titles p {
+    margin: 0;
+    padding: 0.5rem;
+    font-size: 4rem;
+    color: white;
     
 }
+
+#plantotm-title {
+    background-color: #389AAF;
+    
+}
+
+#plant-name {
+    background-color: #226175;
+}
+
+.plantotm-titles {
+    display: flex;
+    min-height: 23rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-left: 10rem;
+}
+
+.plantotm-container {
+    max-width: 100%;
+    min-height: 27rem;
+    padding-top: 2%;
+    background-image: url("Design/banner_2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 
 /*
 .bg-plantotm img {
@@ -249,7 +297,7 @@ header img {
 
 /* Media queries */
 
-@media screen and (max-width: 1700px) {
+@media screen and (max-width: 1600px) {
 
     #title-big, 
     #button-big {
@@ -304,8 +352,12 @@ header img {
     }
 
     .navbar .logo {
-        padding-left: 26rem;
+        padding-left: 35rem;
+        /*max-width: 16rem;*/
     }
+
+    
+
     /*header img {
       height: 30rem;
       object-fit: cover;
@@ -313,7 +365,48 @@ header img {
     */
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1400px) {
 
-   
+    .navbar .logo  {
+        padding-right: 0;
+        padding-left: 5rem;
+    }
+
+    #profile {
+        display: none;
+    }
+
+    #burger {
+        order: 1;
+    }
+
+    .logo {
+        order: 3;
+    }
+    
+    #search {
+        order: 2;
+    }
+
+    #favorites {
+        order: 4;
+    }
+
+    #cart {
+        order: 5;
+    }
+
+}
+
+
+
+@media screen and (max-width: 600px) {
+
+    .navbar .logo  {
+        width: 14rem;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    
 }
